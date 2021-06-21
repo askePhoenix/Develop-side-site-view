@@ -24,8 +24,16 @@ jobs:
       - checkout
       # Next, the node orb's install-packages step will install the dependencies from a package.json.
       # The orb install-packages step will also automatically cache them for faster future runs.
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "yarn.lock" }}
+            - v1-dependencies-
       - node/install-packages:
-            pkg-manager: yarn 
+            pkg-manager: yarn
+      - save_cache:
+          paths:
+            - "./"
+          key: v1-dependencies-{{ checksum "yarn.lock" }}
 
       # If you are using yarn instead npm, remove the line above and uncomment the two lines below.
       # - node/install-packages:
