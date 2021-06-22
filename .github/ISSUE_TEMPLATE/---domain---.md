@@ -10,20 +10,20 @@ assignees: askePhoenix
 **[ Story Url ]**
 - YouTrack : https://develop-side-site.myjetbrains.com/youtrack/issue/SIDE-1
 
-**[ 사용 컴포넌트 ]**
-- /src/component/box/login.js
-
-**[ 구성 내용 ]**
-- 사용자 로그인 페이지
-
-**[ Name ]**
+**[ Domain Name ]**
 - LoginPage
 
 **[ Domain URL ]**
 - /login
 
-**[ 타입 ]**
-- JSX
+**[ 파일 위치 ]**
+- /src/domain/login/LoginPage.js
+
+**[ 구성 내용 ]**
+- 사용자 로그인 페이지
+
+**[ 구성 컴포넌트 ]**
+- 로그인 박스 : https://github.com/askePhoenix/Develop-side-site-view/issues/9
 
 **[ 매개 변수 ]**
 - props
@@ -35,15 +35,29 @@ assignees: askePhoenix
 }
 ```
 
-**[ 구성 ]**
-1. 로그인 입력 태그
-2. 비밀번호 입력 태그
-
 **[ 결과 ]**
-- JSX
+- Jsx :
+  ```html
+  <html>
+    <LoginBox>
+    </LoginBox>
+  </html>
+  ```
+
+- default - html :
+  ```html
+  <html>
+    <div>
+      <label>ID : </label>
+      <input type="text">
+      <label>Password : </label>
+      <input type="text">
+    </div>
+  </html>
+  ```
 
 **[ 주의사항 ]**
 - 없습니다.
 
 **[ 추가 내용 ]**
-- 없습니다.
+- 작성중인 이슈입니다. (06.22)
