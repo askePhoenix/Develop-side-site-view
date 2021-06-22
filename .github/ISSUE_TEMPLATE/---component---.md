@@ -15,39 +15,49 @@ assignees: askePhoenix
 
 **[ 개발 내용 ]**
 - Add Template Component Test code
-- 로그인 화면에서 아이디와 비밀번호를 입력하는 컴포넌트
+- 사이트에서 사용하는 디자인이 적용된 버튼
 
 **[ Name ]**
-- LoginBox
+- DesignButton
 
 **[ Using URL ]**
-- /login
-- method : GET
+- 없음
 
-**[ 타입 ]**
+**[ 컴포넌트 타입 ]**
 - JSX
 
 **[ 매개 변수 ]**
 - props :
 ```json
 {
-  "auto-login" : props.autoLogin
+  "context" : props.context
 }
 ```
 
 **[ defaultProps ]**
 ```json
 {
-  "auto-login" : "false"
+  "context" : "default"
 }
 ```
 
 **[ 구성 ]**
-1. 로그인 입력 태그
-2. 비밀번호 입력 태그
+1. 버튼
 
 **[ 결과 ]**
-- JSX
+- Jsx :
+  ```html
+  <input type="button">
+      {props.context}
+  </input>
+  ```
+
+- default - html :
+  ```html
+  <input type="button">
+      default
+  </input>
+  ```
 
 **[ 주의사항 ]**
 - 없습니다.
