@@ -2,7 +2,7 @@
 name: "** Domain **"
 about: Domain
 title: "[Domain] "
-labels: feature
+labels: feature, test code, domain
 assignees: askePhoenix
 
 ---
