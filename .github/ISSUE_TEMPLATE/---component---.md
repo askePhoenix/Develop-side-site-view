@@ -2,7 +2,7 @@
 name: "** Component **"
 about: Component
 title: "[Component] "
-labels: feature
+labels: feature, test code, component
 assignees: askePhoenix
 
 ---
