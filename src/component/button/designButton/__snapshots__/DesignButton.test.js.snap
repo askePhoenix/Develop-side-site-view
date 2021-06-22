@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render test, DesignButton 1`] = `
+<input
+  type="button"
+>
+  test context
+</input>
+`;
+
+exports[`render test, default DesignButton 1`] = `
+<input
+  type="button"
+>
+  default
+</input>
+`;
