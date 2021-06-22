@@ -48,7 +48,7 @@ jobs:
       - run:
           name: Run tests
           command: |
-            yarn test
+            yarn test --coverage
             ./node_modules/codecov/bin/codecov --disable=gcov
 
 workflows:
