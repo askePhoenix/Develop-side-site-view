@@ -26,8 +26,8 @@ jobs:
       # The orb install-packages step will also automatically cache them for faster future runs.
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "yarn.lock" }}
-            - v1-dependencies-
+            - v1-dependencies2-{{ checksum "yarn.lock" }}
+            - v1-dependencies2-
       - node/install-packages:
             pkg-manager: yarn
       - run:
@@ -36,7 +36,7 @@ jobs:
       - save_cache:
           paths:
             - "./"
-          key: v1-dependencies-{{ checksum "yarn.lock" }}
+          key: v1-dependencies2-{{ checksum "yarn.lock" }}
 
       # If you are using yarn instead npm, remove the line above and uncomment the two lines below.
       # - node/install-packages:
