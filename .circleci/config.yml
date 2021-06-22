@@ -49,7 +49,7 @@ jobs:
           name: Run tests
           command: |
             yarn test
-            ./node_modules/codecov/bin/codecov 
+            ./node_modules/codecov/bin/codecov --disable=gcov
 
 workflows:
   # Below is the definition of your workflow.
