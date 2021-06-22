@@ -1,20 +1,21 @@
 ---
 name: "** Task **"
 about: Task
-title: "[TASK] "
+title: "[Task] "
 labels: task
 assignees: askePhoenix
 
 ---
 
 **[ 분류 ]**
-- Issue Template
+- Library 자료 조사
 
 **[ 내용 ]**
-- Add Issue Template
+- Component 스타일 라이브러리를 조사하고 기록합니다.
 
 **[ 작업 방법 ]**
-1. Settings -> Feature -> Click Button "Set up templates"
+1. 구글링
+2. 해당 이슈 수정
 
 **[ 추가 내용 ]**
 - 없음
