@@ -15,7 +15,7 @@ assignees: askePhoenix
 
 **[ 개발 내용 ]**
 - Add Template Component Test code
-- 계정이 있는지 확인합니다.
+- 로그인 화면에서 아이디와 비밀번호를 입력하는 컴포넌트
 
 **[ Name ]**
 - LoginBox
@@ -28,12 +28,17 @@ assignees: askePhoenix
 - JSX
 
 **[ 매개 변수 ]**
-- props
+- props :
+```json
+{
+  "auto-login" : props.autoLogin
+}
+```
 
 **[ defaultProps ]**
 ```json
 {
-  "name" : "user"
+  "auto-login" : "false"
 }
 ```
 
