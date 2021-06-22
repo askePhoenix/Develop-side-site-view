@@ -13,6 +13,9 @@ assignees: askePhoenix
 **[ 자식 컴포넌트 ]**
 - 없음
 
+**[ 파일 위치 ]**
+- /src/component/button/designButton/DesignButton.js
+
 **[ 개발 내용 ]**
 - Add Template Component Test code
 - 사이트에서 사용하는 디자인이 적용된 버튼
