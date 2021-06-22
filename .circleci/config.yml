@@ -49,7 +49,7 @@ jobs:
           name: Run tests
           command: |
             yarn test
-            codecov
+            ./node_modules/codecov/bin/codecov 
 
 workflows:
   # Below is the definition of your workflow.
