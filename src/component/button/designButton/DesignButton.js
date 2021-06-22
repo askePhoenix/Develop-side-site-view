@@ -1,9 +1,9 @@
 import React from 'react'
 
-function DesignButton() {
+function DesignButton(props) {
     return (
         <input type="button">
-            default
+            { props.context || "default"}
         </input>
     );
 }
