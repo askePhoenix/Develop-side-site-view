@@ -1,5 +1,6 @@
 
 import React from 'react'
+import LoginPage from "./domain/login/LoginPage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           Learn React
         </a>
       </header>
+        <LoginPage></LoginPage>
     </div>
   );
 }

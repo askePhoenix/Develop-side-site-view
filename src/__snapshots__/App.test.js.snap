@@ -23,5 +23,8 @@ exports[`Link changes the class when hovered 1`] = `
       Learn React
     </a>
   </header>
+  <div>
+    "default"
+  </div>
 </div>
 `;
