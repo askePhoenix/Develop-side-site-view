@@ -6,7 +6,7 @@ function LoginBox() {
             <label>ID : </label>
             <input type="text"></input>
             <label>Password : </label>
-            <input type="text"> </input>
+            <input type="text"></input>
         </div>
     );
 }
