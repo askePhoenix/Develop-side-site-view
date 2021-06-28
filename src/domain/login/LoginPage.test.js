@@ -4,7 +4,7 @@ import LoginPage from "./LoginPage";
 
 test('LoginPage test', () => {
     const component = renderer.create(
-        <LoginPage/>,
+        <LoginPage />,
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
