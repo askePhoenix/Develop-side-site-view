@@ -1,9 +1,9 @@
 ---
-name: Feature request
-about: Suggest an idea for this project
-title: ''
-labels: ''
-assignees: ''
+name: "** Axios **"
+about: Axios
+title: "[Axios] "
+labels: feature
+assignees: askePhoenix
 
 ---
 
