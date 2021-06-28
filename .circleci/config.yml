@@ -44,7 +44,9 @@ jobs:
           command: yarn build
       - run:
           name: Run tests
-          command: yarn test
+          command: |
+              yarn test -u
+              yarn test
 
 workflows:
   # Below is the definition of your workflow.
