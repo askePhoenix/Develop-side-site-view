@@ -1,6 +1,7 @@
 
 import React from 'react'
 import LoginPage from "./domain/login/LoginPage";
+import BlogPage from "./domain/blog/BlogPage";
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
           Learn React
         </a>
       </header>
-        <LoginPage></LoginPage>
+      <LoginPage></LoginPage>
+      <BlogPage></BlogPage>
     </div>
   );
 }
