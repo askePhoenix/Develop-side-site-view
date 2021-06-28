@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginBox test 1`] = `
+<div>
+  <label>
+    ID : 
+  </label>
+  <input
+    type="text"
+  />
+  <label>
+    Password : 
+  </label>
+  <input
+    type="text"
+  />
+</div>
+`;
