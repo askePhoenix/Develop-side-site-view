@@ -9,7 +9,7 @@ export default class Routes extends React.Component {
             <Router>
                 <Switch>
                     <Route exact path="/" component={LoginPage}/>
-                    <Route exact path="/blog" component={BlogPage}/>
+                    <Route path="/blog" component={BlogPage}/>
                 </Switch>
             </Router>
         )

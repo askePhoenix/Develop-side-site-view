@@ -13,8 +13,6 @@ exports[`LoginBox test 1`] = `
   </label>
   <input
     type="text"
-  >
-     
-  </input>
+  />
 </div>
 `;
