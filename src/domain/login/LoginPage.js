@@ -1,9 +1,10 @@
 import React from 'react'
+import LoginBox from "../../component/loginBox/LoginBox";
 
 function LoginPage() {
     return (
         <div>
-            "default"
+            <LoginBox></LoginBox>
         </div>
     );
 }
