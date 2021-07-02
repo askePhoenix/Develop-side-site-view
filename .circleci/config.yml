@@ -25,13 +25,16 @@ jobs:
       # Next, the node orb's install-packages step will install the dependencies from a package.json.
       # The orb install-packages step will also automatically cache them for faster future runs.
       - restore_cache:
-          key: v1-dependencies-{{ checksum "yarn.lock" }}
+          key: v1-dependencies2-{{ checksum "yarn.lock" }}
       - node/install-packages:
             pkg-manager: yarn
+      - run:
+          name: yarn add codecov
+          command: yarn add codecov --dev 
       - save_cache:
           paths:
             - "./"
-          key: v1-dependencies-{{ checksum "yarn.lock" }}
+          key: v1-dependencies2-{{ checksum "yarn.lock" }}
 
       # If you are using yarn instead npm, remove the line above and uncomment the two lines below.
       # - node/install-packages:
@@ -43,7 +46,8 @@ jobs:
           name: Run tests
           command: |
               yarn test -u
-              yarn test
+              yarn test --coverage
+              ./node_modules/codecov/bin/codecov --disable=gcov
 
 workflows:
   # Below is the definition of your workflow.
