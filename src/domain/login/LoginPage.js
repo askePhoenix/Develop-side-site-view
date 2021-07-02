@@ -40,7 +40,7 @@ const GetAuthLogin = (id, pw, setter) => {
 
     console.log("id : " + id);
     console.log("pw : " + pw);
-    axios.get('/api/users/api-token-auth', {
+    axios.post('/api/users/api-token-auth', {
         "username": id,
         "password": pw
     }).then((response) => {
