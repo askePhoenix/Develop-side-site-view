@@ -75,11 +75,15 @@ export default function LoginPage() {
                         label="Remember me"
                     />
                     <Button
-                        type="submit"
+                        type="button"
                         fullWidth
                         variant="contained"
                         color="primary"
                         className={classes.submit}
+
+                        onClick={()=>{
+                            window.location = "/blog";
+                        } }
                     >
                         Sign In
                     </Button>

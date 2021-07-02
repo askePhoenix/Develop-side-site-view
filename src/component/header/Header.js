@@ -46,7 +46,7 @@ export default function Header(props) {
                     <SearchIcon />
                 </IconButton>
                 <Button variant="outlined" size="small" onClick={()=>{
-                    window.location = "/";
+                    window.location = "/login";
                 } }>
                     로그인
                 </Button>
