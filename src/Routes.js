@@ -14,7 +14,7 @@ export default class Routes extends React.Component {
                                 <LoginPage token={this.props.token} setToken={this.props.setToken}></LoginPage>
                            }/>
                     <Route exact path="/blog"
-                           return={() =>
+                           render={() =>
                                <BlogPage token={this.props.token} setToken={this.props.setToken}></BlogPage>
                            }/>
                     <Route exact path="/">
