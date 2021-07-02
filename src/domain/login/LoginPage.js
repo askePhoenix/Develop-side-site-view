@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -13,6 +13,8 @@ import Typography from '@material-ui/core/Typography';
 import {makeStyles} from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Copyright from "../../component/copyrignt/Copyright";
+import axios from "axios";
+
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -34,7 +36,26 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+const GetAuthLogin = (id, pw, setter) => {
+
+    console.log("id : " + id);
+    console.log("pw : " + pw);
+    axios.get('/api/users/api-token-auth', {
+        "username": id,
+        "password": pw
+    }).then((response) => {
+        setter(response.data.token);
+    }).catch((e)=>{
+        console.log("error");
+        console.log(e)
+    })
+}
+
 export default function LoginPage() {
+    const [authorization, setAuthorization] = useState(null);
+    const [id, setId] = useState('');
+    const [pw, setPw] = useState('');
+
     const classes = useStyles();
 
     return (
@@ -53,11 +74,14 @@ export default function LoginPage() {
                         margin="normal"
                         required
                         fullWidth
-                        id="email"
-                        label="Email Address"
-                        name="email"
-                        autoComplete="email"
+                        id="id"
+                        label="ID"
+                        name="id"
+                        autoComplete="text"
                         autoFocus
+                        onChange={(e) => {
+                            setId(e.target.value);
+                        }}
                     />
                     <TextField
                         variant="outlined"
@@ -69,6 +93,9 @@ export default function LoginPage() {
                         type="password"
                         id="password"
                         autoComplete="current-password"
+                        onChange={(e) => {
+                            setPw(e.target.value);
+                        }}
                     />
                     <FormControlLabel
                         control={<Checkbox value="remember" color="primary"/>}
@@ -81,9 +108,12 @@ export default function LoginPage() {
                         color="primary"
                         className={classes.submit}
 
-                        onClick={()=>{
-                            window.location = "/blog";
-                        } }
+                        onClick={() => {
+                            console.log("test");
+                            GetAuthLogin(id, pw, setAuthorization);
+                            console.log("authorization : ");
+                            console.log(authorization);
+                        }}
                     >
                         Sign In
                     </Button>
