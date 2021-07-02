@@ -15,6 +15,7 @@ import Container from '@material-ui/core/Container';
 import Copyright from "../../component/copyrignt/Copyright";
 import axios from "axios";
 
+const login_url = "/api/users/api-token-auth/";
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -36,16 +37,17 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+
 const GetAuthLogin = (id, pw, setter) => {
 
     console.log("id : " + id);
     console.log("pw : " + pw);
-    axios.post('/api/users/api-token-auth', {
+    axios.post(login_url, {
         "username": id,
         "password": pw
     }).then((response) => {
         setter(response.data.token);
-    }).catch((e)=>{
+    }).catch((e) => {
         console.log("error");
         console.log(e)
     })
