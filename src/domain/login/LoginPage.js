@@ -46,7 +46,6 @@ const GetAuthLogin = (id, pw, setter) => {
         "username": id,
         "password": pw
     }).then((response) => {
-        axios.defaults.headers.common['Authorization']=response.data.token;
         setter(response.data.token);
 
     }).catch((e) => {
@@ -55,7 +54,7 @@ const GetAuthLogin = (id, pw, setter) => {
     })
 }
 
-export default function LoginPage() {
+export default function LoginPage(props) {
     const [authorization, setAuthorization] = useState(null);
     const [id, setId] = useState('');
     const [pw, setPw] = useState('');
@@ -114,7 +113,7 @@ export default function LoginPage() {
 
                         onClick={() => {
                             console.log("test");
-                            GetAuthLogin(id, pw, setAuthorization);
+                            GetAuthLogin(id, pw, props.setToken);
                             console.log("authorization : ");
                             console.log(authorization);
                         }}
