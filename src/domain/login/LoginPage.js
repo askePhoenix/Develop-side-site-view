@@ -46,7 +46,9 @@ const GetAuthLogin = (id, pw, setter) => {
         "username": id,
         "password": pw
     }).then((response) => {
+        axios.defaults.headers.common['Authorization']=response.data.token;
         setter(response.data.token);
+
     }).catch((e) => {
         console.log("error");
         console.log(e)
