@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -55,9 +55,13 @@ const GetAuthLogin = (id, pw, setter) => {
 }
 
 export default function LoginPage(props) {
-    const [authorization, setAuthorization] = useState(null);
     const [id, setId] = useState('');
     const [pw, setPw] = useState('');
+
+    useEffect(() => {
+        if (props.token !== null)
+            axios.defaults.headers.common['Authorization'] = props.token;
+    }, [props.token])
 
     const classes = useStyles();
 
@@ -112,10 +116,7 @@ export default function LoginPage(props) {
                         className={classes.submit}
 
                         onClick={() => {
-                            console.log("test");
                             GetAuthLogin(id, pw, props.setToken);
-                            console.log("authorization : ");
-                            console.log(authorization);
                         }}
                     >
                         Sign In

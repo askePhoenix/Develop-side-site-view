@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Box from '@material-ui/core/Box';
 import {makeStyles} from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Header from "../../component/header/Header";
 import Copyright from "../../component/copyrignt/Copyright";
+import axios from "axios";
 
 
 const sections = [
@@ -40,12 +41,17 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function BlogPage() {
+export default function BlogPage(props) {
+    useEffect(() => {
+        if (props.token !== null)
+            axios.defaults.headers.common['Authorization'] = props.token;
+    }, [props.token])
+
     const classes = useStyles();
 
     return (
         <Container component="main">
-            <Header title="Blog" sections={sections}> </Header>
+            <Header title="Blog" sections={sections} token={props.token}> </Header>
             <CssBaseline/>
             <div className={classes.paper}>
                 컨텐츠

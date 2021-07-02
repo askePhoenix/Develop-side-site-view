@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
@@ -28,6 +28,11 @@ const useStyles = makeStyles((theme) => ({
 export default function Header(props) {
     const classes = useStyles();
     const {sections, title} = props;
+
+    useEffect(() => {
+        if (props.token !== null)
+            axios.defaults.headers.common['Authorization'] = props.token;
+    }, [props.token])
 
     return (
         <React.Fragment>
