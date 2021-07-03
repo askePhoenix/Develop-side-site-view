@@ -48,8 +48,10 @@ const GetAuthLogin = (id, pw, setter, setCookie) => {
         "password": pw
     }).then((response) => {
         setter(response.data.token);
-        setCookie('token', response.data.token, {path:'/',
-            expires:new Date().setMinutes(new Date().getMinutes(), +30)})
+        setCookie('token', response.data.token, {
+            path: '/',
+            expires: new Date().setMinutes(new Date().getMinutes() + 30)
+        })
 
     }).catch((e) => {
         console.log("error");
@@ -65,7 +67,7 @@ export default function LoginPage(props) {
     useEffect(() => {
         if (props.token !== null)
             console.log("useEffect LoginPage 2");
-            axios.defaults.headers.common['Authorization'] = props.token;
+        axios.defaults.headers.common['Authorization'] = props.token;
     }, [props.token])
 
     const classes = useStyles();
