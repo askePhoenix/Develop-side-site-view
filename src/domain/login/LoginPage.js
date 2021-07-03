@@ -14,6 +14,7 @@ import {makeStyles} from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Copyright from "../../component/copyrignt/Copyright";
 import axios from "axios";
+import {useCookies} from "react-cookie";
 
 const login_url = "/api/users/api-token-auth/";
 
@@ -38,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-const GetAuthLogin = (id, pw, setter) => {
+const GetAuthLogin = (id, pw, setter, setCookie) => {
 
     console.log("id : " + id);
     console.log("pw : " + pw);
@@ -47,6 +48,8 @@ const GetAuthLogin = (id, pw, setter) => {
         "password": pw
     }).then((response) => {
         setter(response.data.token);
+        setCookie('token', response.data.token, {path:'/',
+            expires:new Date().setMinutes(new Date().getMinutes(), +30)})
 
     }).catch((e) => {
         console.log("error");
@@ -57,9 +60,11 @@ const GetAuthLogin = (id, pw, setter) => {
 export default function LoginPage(props) {
     const [id, setId] = useState('');
     const [pw, setPw] = useState('');
+    const [cookies, setCookie] = useCookies(['token'])
 
     useEffect(() => {
         if (props.token !== null)
+            console.log("useEffect LoginPage 2");
             axios.defaults.headers.common['Authorization'] = props.token;
     }, [props.token])
 
@@ -116,7 +121,7 @@ export default function LoginPage(props) {
                         className={classes.submit}
 
                         onClick={() => {
-                            GetAuthLogin(id, pw, props.setToken);
+                            GetAuthLogin(id, pw, props.setToken, setCookie);
                         }}
                     >
                         Sign In
