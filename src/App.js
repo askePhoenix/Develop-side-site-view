@@ -19,18 +19,15 @@ function App() {
     useEffect(() => {
         if (token !== null) {
             console.log("useEffect App 2");
-            axios.defaults.headers.common['Authorization'] = token;
         }
     }, [token])
 
 
     useEffect(() => {
-        return () => {
-            if (cookies.token !== undefined) {
-                console.log("useEffect App 3");
-                setToken(cookies.token);
-            }
-        };
+        if (cookies.token !== undefined) {
+            console.log("useEffect App 3");
+            setToken(cookies.token);
+        }
     }, []);
 
     return (

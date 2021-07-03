@@ -50,7 +50,7 @@ const GetAuthLogin = (id, pw, setter, setCookie) => {
         setter(response.data.token);
         setCookie('token', response.data.token, {
             path: '/',
-            expires: new Date().setMinutes(new Date().getMinutes() + 30)
+            maxAge: 1800
         })
 
     }).catch((e) => {
@@ -62,7 +62,7 @@ const GetAuthLogin = (id, pw, setter, setCookie) => {
 export default function LoginPage(props) {
     const [id, setId] = useState('');
     const [pw, setPw] = useState('');
-    const [cookies, setCookie] = useCookies(['token'])
+    const [cookies, setCookie] = useCookies(['token']);
 
     useEffect(() => {
         if (props.token !== null)
